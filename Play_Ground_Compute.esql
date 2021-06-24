@@ -1,0 +1,16 @@
+
+
+
+
+CREATE COMPUTE MODULE Play_Ground_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+
+		SET OutputRoot = InputRoot;
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelname='output1';
+		PROPAGATE TO LABEL 'output1';
+
+		RETURN TRUE;
+	END;
+
+END MODULE;
