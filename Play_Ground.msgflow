@@ -1,81 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmMQInput.msgnode="ComIbmMQInput.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:CommonUtils_oneToOne.subflow="CommonUtils/oneToOne.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow"
-    xmlns:mbmonitor="http://www.ibm.com/wbi/2008/eflow_mbmonitor" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Play_Ground.msgflow" nsPrefix="Play_Ground.msgflow">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmMQInput.msgnode="ComIbmMQInput.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:CommonUtils_errorLog.subflow="CommonUtils/errorLog.subflow" xmlns:CommonUtils_oneToOne.subflow="CommonUtils/oneToOne.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Play_Ground.msgflow" nsPrefix="Play_Ground.msgflow">
   <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
     <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.outputQueue1" name="outputQueue1" defaultValueLiteral="PLAY.GROUND.OUT2">
-      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.outputQueue" name="outputQueue" defaultValueLiteral="PLAY.GROUND.OUT">
-      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.inputQueue" name="inputQueue" lowerBound="1" defaultValueLiteral="PLAY.GROUND.IN">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.PLAY.GROUND.OUT" name="PLAY.GROUND.OUT" defaultValueLiteral="PLAY.GROUND.OUT">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.PLAY.GROUND.OUT2" name="PLAY.GROUND.OUT2" defaultValueLiteral="PLAY.GROUND.OUT2">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <translation xmi:type="utility:TranslatableString" key="Play_Ground" bundleName="Play_Ground" pluginId="Play_Ground"/>
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Play_Ground/icons/full/obj16/Play_Ground.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Play_Ground/icons/full/obj30/Play_Ground.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="117,177" destinationQueueManagerName="QM01">
+      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="117,177" destinationQueueManagerName="QM01" messageDomainProperty="XMLNSC">
         <translation xmi:type="utility:ConstantString" string="MQ Input"/>
       </nodes>
-      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="376,178">
+      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="376,178" mode="routeToFirst">
         <translation xmi:type="utility:ConstantString" string="Route To Label"/>
-        <monitorEvents eventSourceDescription="In terminal" eventSourceName="Route To Label.terminal.in" eventIdentity="Route To Label.InTerminal">
-          <eventXMLDoc xmi:type="mbmonitor:MonitorEvent">
-            <applicationData dataLocation="$LocalEnvironment/Destination/RouterList/DestinationData/labelName" isXPath="true" complexData="true"/>
-            <globalTransactionCorrelator/>
-            <parentTransactionCorrelator/>
-            <localTransactionCorrelator/>
-            <bitStreamData encoding="none" bitstreamContent="none"/>
-            <eventName literal="Route To Label.InTerminal"/>
-            <eventFilter dataLocation="true()" isXPath="true"/>
-          </eventXMLDoc>
-        </monitorEvents>
-      </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="658,124" labelName="output">
-        <translation xmi:type="utility:ConstantString" string="MQOutPut"/>
-      </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="657,261" labelName="output1">
-        <translation xmi:type="utility:ConstantString" string="MQOutPut1"/>
       </nodes>
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="273,177" transaction="commit" computeExpression="esql://routine/#Play_Ground_Compute.Main" computeMode="destinationAndMessage">
         <translation xmi:type="utility:ConstantString" string="Compute"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="818,122" destinationQueueManagerName="QM01">
-        <translation xmi:type="utility:ConstantString" string="MQ Output"/>
-      </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="823,261" destinationQueueManagerName="QM01">
-        <translation xmi:type="utility:ConstantString" string="MQ Output1"/>
-      </nodes>
       <nodes xmi:type="CommonUtils_oneToOne.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="187,259">
         <translation xmi:type="utility:ConstantString" string="oneToOne"/>
       </nodes>
+      <nodes xmi:type="CommonUtils_errorLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_9" location="480,244">
+        <translation xmi:type="utility:ConstantString" string="errorLog"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="759,133" destinationQueueManagerName="QM01">
+        <translation xmi:type="utility:ConstantString" string="PLAY.GROUND.OUT"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_12" location="658,135" labelName="hockey">
+        <translation xmi:type="utility:ConstantString" string="hockeyQ"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="673,311" labelName="footbal">
+        <translation xmi:type="utility:ConstantString" string="footballQ"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="763,308" destinationQueueManagerName="QM01">
+        <translation xmi:type="utility:ConstantString" string="PLAY.GROUND.OUT2"/>
+      </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
-      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
-      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_8" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_9" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_11" sourceNode="FCMComposite_1_12" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
     </composition>
     <propertyOrganizer>
-      <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.outputQueue1">
-        <propertyName xmi:type="utility:TranslatableString" key="Property.outputQueue1" bundleName="Play_Ground" pluginId="Play_Ground"/>
-        <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.outputQueue">
-          <propertyName xmi:type="utility:TranslatableString" key="Property.outputQueue" bundleName="Play_Ground" pluginId="Play_Ground"/>
-          <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.inputQueue">
-            <propertyName xmi:type="utility:TranslatableString" key="Property.inputQueue" bundleName="Play_Ground" pluginId="Play_Ground"/>
+      <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.inputQueue">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.inputQueue" bundleName="Play_Ground" pluginId="Play_Ground"/>
+        <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.PLAY.GROUND.OUT">
+          <propertyName xmi:type="utility:TranslatableString" key="Property.PLAY.GROUND.OUT" bundleName="Play_Ground" pluginId="Play_Ground"/>
+          <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.PLAY.GROUND.OUT2">
+            <propertyName xmi:type="utility:TranslatableString" key="Property.PLAY.GROUND.OUT2" bundleName="Play_Ground" pluginId="Play_Ground"/>
           </propertyDescriptor>
         </propertyDescriptor>
       </propertyDescriptor>
     </propertyOrganizer>
-    <attributeLinks promotedAttribute="Property.outputQueue1" overriddenNodes="FCMComposite_1_8">
-      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
-    </attributeLinks>
-    <attributeLinks promotedAttribute="Property.outputQueue" overriddenNodes="FCMComposite_1_7">
-      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
-    </attributeLinks>
     <attributeLinks promotedAttribute="Property.inputQueue" overriddenNodes="FCMComposite_1_1">
       <overriddenAttribute href="ComIbmMQInput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.PLAY.GROUND.OUT" overriddenNodes="FCMComposite_1_11">
+      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.PLAY.GROUND.OUT2" overriddenNodes="FCMComposite_1_7">
+      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
     </attributeLinks>
     <stickyBoard/>
   </eClassifiers>

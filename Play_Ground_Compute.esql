@@ -2,14 +2,20 @@
 
 
 
+
+
+
+
 CREATE COMPUTE MODULE Play_Ground_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 
+		IF InputRoot.XMLNSC.root.hockey = 'hockey' THEN
+			SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelName = 'hockey';
+		ELSE
+			SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelName = 'footbal';
+		END IF;
 		SET OutputRoot = InputRoot;
-		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelname='output1';
-		PROPAGATE TO LABEL 'output1';
-
 		RETURN TRUE;
 	END;
 
